@@ -811,6 +811,17 @@ define Device/comfast_cf-e313ac
 endef
 TARGET_DEVICES += comfast_cf-e313ac
 
+define Device/comfast_cf-e313ac-v2
+  SOC := qca9563
+  DEVICE_VENDOR := COMFAST
+  DEVICE_MODEL := CF-E313AC
+  DEVICE_VARIANT := v2
+  DEVICE_PACKAGES := rssileds kmod-ath10k-ct kmod-netsemi \
+	ath10k-firmware-qca9888-ct -swconfig -uboot-envtools
+  IMAGE_SIZE := 15936k
+endef
+TARGET_DEVICES += comfast_cf-e313ac-v2
+
 define Device/comfast_cf-e314n-v2
   SOC := qca9531
   DEVICE_VENDOR := COMFAST
