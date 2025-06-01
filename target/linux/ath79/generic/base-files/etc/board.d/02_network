@@ -663,6 +663,10 @@ ath79_setup_macs()
 		lan_mac=$(fritz_tffs -n maca -i $(find_mtd_part "tffs (1)"))
 		wan_mac=$(fritz_tffs -n macb -i $(find_mtd_part "tffs (1)"))
 		;;
+	comfast,cf-e313ac-v2)
+		lan_mac=$(mtd_get_mac_binary art 0x0)
+		wan_mac=$(macaddr_add $(mtd_get_mac_binary art 0x0) 1)
+		;;
 	comfast,cf-e375ac)
 		wan_mac=$(macaddr_add $(mtd_get_mac_binary art 0x0) 1)
 		;;
